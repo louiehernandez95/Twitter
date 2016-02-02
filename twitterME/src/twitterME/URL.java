@@ -3,7 +3,7 @@ package twitterME;
 public class URL {
 	String FindUrl(String tweet){
 		//search for URL
-	    if (tweet.contains('http:' || '.com')) {
+	    if (tweet.contains('http://' || '.com')) {
 	        int indexOfHttp = tweet.indexOf('http:');
 	        int endPoint = (tweet.indexOf(' ', indexOfHttp) != -1) ?
 	        	tweet.indexOf(' ', indexOfHttp) : tweet.length();
@@ -11,6 +11,6 @@ public class URL {
 	    }
 	 
 	    //final
-	    return tweet;
+	    return url;
 	    }
 }
