@@ -1,7 +1,7 @@
 package twitterME;
 
 public class URL {
-	String Parse(String tweet){
+	String FindUrl(String tweet){
 		//search for URL
 	    if (tweet.contains('http:' || '.com')) {
 	        int indexOfHttp = tweet.indexOf('http:');
