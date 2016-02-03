@@ -8,10 +8,9 @@ public class URL {
 	        int indexOfHttp = tweet.indexOf('http://');
 	        int endPoint = (tweet.indexOf(' ', indexOfHttp) != -1) ?
 	        	tweet.indexOf(' ', indexOfHttp) : tweet.length();
-	        url = tweet.substring(indexOfHttp, endPoint);       
+	        url = tweet.substring(indexOfHttp, endPoint);  
+	        return url;
 	    }
-	 
-	    //final
-	    return url;
+	    return "";
 	    }
 }

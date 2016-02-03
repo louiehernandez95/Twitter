@@ -9,8 +9,9 @@ public class topic {
         int endPoint = (tweet.indexOf(' ', indexOfTopic) != -1) ?
 	        	tweet.indexOf(' ', indexOfTopic) : tweet.length();
 	        topic = tweet.substring(indexOfTopic, endPoint);    
-	    }
-	  //final
 	    return topic;
+	    }
+	 
+	    return "";
 	 }
 }
