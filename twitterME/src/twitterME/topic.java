@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 private LinkedList<String> lines = new LinkedList<String>();
-private HashTable dictionary = new HashTable();
 
 public class Parser {
 	public String FindTopic(String tweet){
@@ -44,9 +43,5 @@ public class Parser {
 		    }
 		    return "";
 		    }
-	 public static String punctuation(String s){
-	        String t ;
-	        t = s.replaceAll("[\\[\\]_:\"'`?;0-9;()-/.,*! ]", " ").toLowerCase();
-	        return t;
-	   }
+	 
 }
