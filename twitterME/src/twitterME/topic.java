@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.*;
 
+private LinkedList<String> lines = new LinkedList<String>();
+private HashTable dictionary = new HashTable();
 
 public class Parser {
 	public String FindTopic(String tweet){
