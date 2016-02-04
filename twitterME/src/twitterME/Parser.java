@@ -1,9 +1,10 @@
+package twitterME;
 import java.io.*;
 import java.util.*;
 
-private LinkedList<String> UrlList = new LinkedList<String>();
-private LinkedList<String> TopicsList = new LinkedList<String>();
-private LinkedList<String> HashesList = new LinkedList<String>();
+public LinkedList<String> UrlList = new LinkedList<String>();
+public LinkedList<String> TopicsList = new LinkedList<String>();
+public LinkedList<String> HashesList = new LinkedList<String>();
 
 public class Parser {
 	public Boolean FindTopic(String tweet){
@@ -11,15 +12,18 @@ public class Parser {
 			int i=0;
 			String topic;
 			do {
+			if (tweet.contains('#@' || 'http://@' || '@http://'|| '@#')) {		    	
+		         break;
+		    }	
 		    if (tweet.contains('@') {
-		    int indexOfTopic = tweet.indexOf('@');
-	        int endPoint = (tweet.indexOf(' ', indexOfTopic) != -1) ?
-		        	tweet.indexOf(' ', indexOfTopic) : tweet.length();
+		        int indexOfTopic = tweet.indexOf('@');
+	            int endPoint = (tweet.indexOf(' ', indexOfTopic) != -1) ?
+		       	tweet.indexOf(' ', indexOfTopic) : tweet.length();
 		        topic = tweet.substring(indexOfTopic, endPoint);    
 		        TopicsList.set(i, topic); 
 		        return true;
-		       }
-		    i++;
+		    }
+		     i++;
 	        } while (i<TopicsList.size());
 		    return false;
 		 }
@@ -29,6 +33,9 @@ public class Parser {
 				String hashTag=tweet;
 				int i=0;
 				do {
+			    if (tweet.contains('#@' || 'http://#' || '#http://'|| '@#')) {		    	
+			         break;
+			    }
 			    if (tweet.contains('#') {
 		            int indexOfHash = tweet.indexOf('#');
 		            int endPoint = (tweet.indexOf(' ', indexOfHash) != -1) ?
@@ -37,7 +44,7 @@ public class Parser {
 			        HashesList.set(i, hashTag); 
 			        return true;
 			       }
-			    i++;
+			       i++;
 	            } while (i<HashesList.size());
 			    return false;
 			 }
@@ -45,16 +52,19 @@ public class Parser {
 				//search for URL
 				String url=tweet;
 				int i=0;
-				do {              
-			    if (tweet.contains("http://")) {
-			        int indexOfHttp = tweet.indexOf('http://');
+				do {         
+			    if (tweet.contains('htttp://@' || 'http://#' || '#http://'|| '@htttp://')) {		    	
+			         break;
+			    }
+			    if (tweet.contains('http://')) {
+			        int indexOfUrl = tweet.indexOf('http://');
 			        int endPoint = (tweet.indexOf(' ', indexOfHttp) != -1) ?
-			        	tweet.indexOf(' ', indexOfHttp) : tweet.length();
-			        url = tweet.substring(indexOfHttp, endPoint);  
+			        	tweet.indexOf(' ', indexOfUrl) : tweet.length();
+			        url = tweet.substring(indexOfUrl, endPoint);  
 			        UrlList.set(i, url);   
 			        return true;
 			        }
-			    i++;
+			        i++;
 	            } while (i<UrlList.size());
 			    return false;
 	    }
