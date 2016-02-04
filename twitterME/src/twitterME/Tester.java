@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class Tester {
-	
+	public void Tests{
   //Check that an object isn't null      
-    FindTopic("@Newyork");
-    FindHash("#newYork");
-    FindUrl("http://NewYork");
+    Parser.FindTopic("@Newyork");
+    Parser.FindHash("#newYork");
+    Parser.FindUrl("http://NewYork");
     assertNotNull(HashesList.get(0));
     assertNotNull(UrlList.get(0));
     assertNotNull(TopicsList.get(0));
@@ -36,4 +36,5 @@ public class Tester {
     assertFalse(Parser.FindUrl("http://@"));
     assertFalse(Parser.FindUrl("http://#"));
     assertFalse(Parser.FindUrl("#http://"));
+	}
 }
