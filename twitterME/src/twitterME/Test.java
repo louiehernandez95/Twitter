@@ -14,5 +14,14 @@ public class Test {
       assertEquals(str1.FindTopic(), str2);
       assertEquals(str3.FindHash(), str2);
       assertEquals(str4.FindUrl(), str2);
+    //Check that an object isn't null
+      assertNotNull(str1);
+      assertNotNull(str3);
+      assertNotNull(str4);
+      
+    //Check that a condition is true
+      assertTrue (HashesList.indexOf(str2) > -1;
+      assertTrue (UrlList.indexOf(str2) > -1;
+      assertTrue (TopicsList.indexOf(str2) > -1;
    }
 }
