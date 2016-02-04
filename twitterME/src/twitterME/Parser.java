@@ -28,8 +28,7 @@ public class Parser {
 				//search for hashtag 
 				String hashTag=tweet;
 				int i=0;
-				do
-	            {
+				do {
 			    if (tweet.contains('#') {
 		            int indexOfHash = tweet.indexOf('#');
 		            int endPoint = (tweet.indexOf(' ', indexOfHash) != -1) ?
@@ -46,9 +45,7 @@ public class Parser {
 				//search for URL
 				String url=tweet;
 				int i=0;
-				do
-	            {
-	              
+				do {              
 			    if (tweet.contains("http://")) {
 			        int indexOfHttp = tweet.indexOf('http://');
 			        int endPoint = (tweet.indexOf(' ', indexOfHttp) != -1) ?
